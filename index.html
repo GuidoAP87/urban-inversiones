@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban - Inversiones Inmobiliarias</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <a href="#" class="logo-link">
+            <img src="urban.png" alt="Logo Urban" class="logo-img">
+        </a>
+        
+        <button class="menu-toggle" aria-label="Abrir menú">
+            <span class="material-icons-outlined">menu</span>
+        </button>
+
+        <nav class="navbar">
+            <a href="#beneficios" class="nav-link">Beneficios</a>
+            <a href="#proyectos" class="nav-link">Propiedades</a>
+            <a href="#" class="nav-link">Nosotros</a>
+            <a href="#contacto" class="btn btn-contact">Contactar</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-brand">
+            <div class="hero-brand-content">
+                <h1>URBAN<br>INVERSIONES</h1>
+                <p>Branding e identidad visual</p>
+            </div>
+         </section>
+
+        <div class="brand-bar-container">
+            <div class="brand-bar">
+                <h2>Presentación de la Marca</h2>
+            </div>
+        </div>
+
+        <section class="features" id="beneficios">
+            <div class="section-header">
+                <h2>Beneficios de Invertir con <span class="text-purple">URBAN</span></h2>
+                <p>Nuestra metodología combina análisis de datos con visión urbana para asegurar el mejor retorno.</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon-box"><span class="material-icons-outlined">verified_user</span></div>
+                    <h3>Seguridad Jurídica</h3>
+                    <p>Garantizamos transparencia total en cada contrato y proceso legal.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-box"><span class="material-icons-outlined">location_on</span></div>
+                    <h3>Ubicación Estratégica</h3>
+                    <p>Seleccionamos zonas con alto potencial de crecimiento en San Luis.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-box"><span class="material-icons-outlined">analytics</span></div>
+                    <h3>Gestión de Rentas</h3>
+                    <p>Nos ocupamos de todo, desde la búsqueda del inquilino hasta el mantenimiento.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects" id="proyectos">
+            <div class="projects-header">
+                <h2>Proyectos <span class="text-purple">Destacados</span></h2>
+                <a href="#" class="link-arrow">Ver todo el catálogo &rarr;</a>
+            </div>
+
+            <div class="projects-grid">
+                <div class="project-item big-item" style="background-image: url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=1000&auto=format&fit=crop');">
+                    <div class="project-info">
+                        <span class="tag">En Construcción</span>
+                        <h3>Residencias Panorama</h3>
+                        <p>San Luis Capital, Centro</p>
+                        <button class="btn btn-white">Saber más</button>
+                    </div>
+                </div>
+                <div class="project-item small-item" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1000&auto=format&fit=crop');">
+                    <div class="project-info">
+                        <h3>Urban Office Hub</h3>
+                        <p>Espacios corporativos premium</p>
+                    </div>
+                </div>
+                <div class="project-item small-item" style="background-image: url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1000&auto=format&fit=crop');">
+                    <div class="project-info">
+                        <h3>Complejo Juana Koslay</h3>
+                        <p>Departamentos con entorno natural</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" id="contacto">
+        <div class="footer-container">
+            <div class="footer-left">
+                <h2>¿Listo para dar el <br> siguiente paso?</h2>
+                <p>Completa el formulario y un asesor experto se pondrá en contacto contigo.</p>
+                <div class="contact-data">
+                    <p><span class="material-icons-outlined">call</span> +54 266 400-0000</p>
+                    <p><span class="material-icons-outlined">email</span> inversiones@urban.com.ar</p>
+                    <p><span class="material-icons-outlined">place</span> San Luis, Argentina</p>
+                </div>
+            </div>
+            <div class="footer-right">
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label>Nombre</label>
+                        <input type="text" placeholder="Ej: Juan Pérez">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" placeholder="juan@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Mensaje</label>
+                        <textarea rows="4" placeholder="¿En qué tipo de inversión estás interesado?"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-full">Enviar Consulta</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 URBAN Digital. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navbar = document.querySelector('.navbar');
+
+        // Abrir/Cerrar menú
+        menuToggle.addEventListener('click', (e) => {
+            navbar.classList.toggle('active');
+            e.stopPropagation();
+        });
+
+        // Cerrar al tocar fuera
+        document.addEventListener('click', (e) => {
+            if (!navbar.contains(e.target) && navbar.classList.contains('active')) {
+                navbar.classList.remove('active');
+            }
+        });
+
+        // Cerrar al tocar enlace
+        navbar.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navbar.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
