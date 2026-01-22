@@ -3,61 +3,60 @@
 /* ========================================= */
 
 :root {
-    --primary: #4b0a75;
-    --secondary: #2a0342;
-    --accent: #8b2ecf;
-    --text-dark: #1a1a1a;
-    --text-light: #f5f5f5;
-    --gray-bg: #f8f9fc;
-    --font-main: 'Poppins', sans-serif;
+    /* PALETA OFICIAL */
+    --primary: #37074d;   
+    --secondary: #580f7a; 
+    
+    --text-dark: #000000;
+    --text-light: #ffffff;
+    
+    /* TIPOGRAFÍAS */
+    --font-title: 'Red Hat Display', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html {
-    scroll-behavior: smooth; 
-}
+html { scroll-behavior: smooth; }
 
-/* AJUSTE DE SCROLL */
 #contacto { scroll-margin-top: 100px; }
-#beneficios, #proyectos { scroll-margin-top: 20px; }
+#beneficios, #proyectos, #nosotros { scroll-margin-top: 20px; }
 
 body {
-    font-family: var(--font-main);
+    font-family: var(--font-body);
     color: var(--text-dark);
     line-height: 1.6;
     overflow-x: hidden;
-    
-    /* FONDO DE PUNTOS (DOT GRID) */
     background-color: #ffffff;
-    background-image: radial-gradient(rgba(75, 10, 117, 0.1) 2px, transparent 2px);
+    background-image: radial-gradient(rgba(55, 7, 77, 0.08) 2px, transparent 2px);
     background-size: 25px 25px;
 }
 
-/* Clases de Utilidad */
+h1, h2, h3, h4, .btn {
+    font-family: var(--font-title);
+    font-weight: 700;
+}
+
 .text-purple { color: var(--primary); }
 
+/* --- BOTONES --- */
 .btn {
     padding: 12px 24px;
     border-radius: 8px;
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
     border: none;
     transition: 0.3s;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     display: inline-block;
     text-decoration: none;
+    letter-spacing: 0.5px;
 }
 
-.btn-primary { background-color: var(--primary); color: white; }
-.btn-primary:hover { background-color: var(--accent); }
+.btn-full { width: 100%; background-color: var(--secondary); color: white; margin-top: 10px; }
+.btn-full:hover { background-color: var(--primary); }
 
-/* Estilo base para botones blancos (se usa en otros lados si los hubiera) */
-.btn-white { background-color: white; color: var(--text-dark); padding: 8px 16px; border-radius: 20px; }
-.btn-white:hover { background: var(--primary); color: white; }
-
-.btn-full { width: 100%; background-color: var(--accent); color: white; margin-top: 10px; }
-.link-arrow { text-decoration: none; color: var(--primary); font-weight: 600; }
+.link-arrow { text-decoration: none; color: var(--secondary); font-weight: 700; }
 
 /* ========================================= */
 /* --- 2. HEADER --- */
@@ -68,7 +67,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 15px 5%;
-    background: rgba(255, 255, 255, 0.92); 
+    background: rgba(255, 255, 255, 0.95); 
     backdrop-filter: blur(10px);
     position: sticky;
     top: 0;
@@ -77,31 +76,62 @@ body {
     border-bottom: 1px solid rgba(255,255,255,0.5);
 }
 
-.logo-img { height: 40px; width: auto; display: block; object-fit: contain; }
+/* 1. El Contenedor (El Marco Redondo) */
+.logo-link {
+    display: flex;              /* Usamos Flex para centrar perfecto */
+    justify-content: center;    /* Centrado horizontal */
+    align-items: center;        /* Centrado vertical */
+    
+    width: 60px;                /* Tamaño fijo */
+    height: 60px;
+    
+    border-radius: 50%;         /* Forma circular */
+    overflow: hidden;           /* CORTA todo lo que se salga del círculo */
+    
+    border: 2px solid #dcd0ff;  /* El borde lila de 2px */
+    background-color: white;    /* Fondo de seguridad */
+}
+
+/* 2. La Imagen (Con Zoom) */
+.logo-img { 
+    width: 100%;
+    height: 100%;
+    object-fit: cover;          
+    
+    /* ¡AQUÍ ESTÁ LA MAGIA! */
+    /* Aumentamos la imagen un 15% (1.15) para que se salga un poco */
+    /* y tape los bordes blancos internos del archivo original */
+    transform: scale(1.15);     
+}
 
 .navbar { display: flex; align-items: center; gap: 15px; }
 
 .nav-link {
     text-decoration: none;
-    color: #444;
-    font-weight: 500;
+    color: #333;
+    font-weight: 600;
     font-size: 0.95rem;
     padding: 8px 12px;
     transition: color 0.3s ease;
+    font-family: var(--font-body);
 }
-.nav-link:hover { color: var(--primary); }
+.nav-link:hover { color: var(--secondary); }
 
 .btn-contact {
-    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    background: var(--secondary);
     color: white !important;
     padding: 10px 25px;
     border-radius: 50px;
-    font-weight: 600;
-    box-shadow: 0 4px 15px rgba(139, 46, 207, 0.3);
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(88, 15, 122, 0.3);
     transition: transform 0.2s, box-shadow 0.2s;
     margin-left: 10px;
 }
-.btn-contact:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(139, 46, 207, 0.5); }
+.btn-contact:hover { 
+    transform: translateY(-2px); 
+    background: var(--primary);
+    box-shadow: 0 6px 20px rgba(55, 7, 77, 0.4); 
+}
 
 .menu-toggle { display: none; background: none; border: none; font-size: 2rem; color: var(--text-dark); cursor: pointer; }
 
@@ -127,14 +157,25 @@ body {
 }
 .hero-brand::before {
     content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); z-index: -1; 
+    background-color: rgba(55, 7, 77, 0.6); 
+    z-index: -1; 
 }
 .hero-brand-content h1 {
-    font-family: 'Poppins', sans-serif; font-weight: 900; font-size: 4rem;
-    line-height: 1; margin-bottom: 15px; text-transform: uppercase;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    font-size: 5rem;
+    line-height: 1; 
+    margin-bottom: 15px; 
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    font-weight: 900;
 }
-.hero-brand-content p { font-size: 1.2rem; letter-spacing: 1px; opacity: 0.9; }
+.hero-brand-content p { 
+    font-family: var(--font-body);
+    font-size: 1.3rem; 
+    letter-spacing: 1px; 
+    opacity: 0.95; 
+    font-weight: 400;
+}
 
 /* BRAND BAR */
 .brand-bar-container { 
@@ -142,10 +183,12 @@ body {
     padding: 20px 5%; display: flex; justify-content: flex-start; 
 }
 .brand-bar {
-    background-color: var(--primary); color: white; padding: 15px 40px;
-    border-radius: 12px; width: 100%; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    background-color: var(--primary);
+    color: white; padding: 15px 40px;
+    border-radius: 12px; width: 100%; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
-.brand-bar h2 { font-size: 1.5rem; font-weight: 600; margin: 0; }
+.brand-bar h2 { font-size: 1.5rem; font-weight: 700; margin: 0; }
 
 /* ========================================= */
 /* --- 4. BENEFICIOS --- */
@@ -156,8 +199,8 @@ body {
     text-align: center; 
     background: transparent; 
 }
-.section-header h2 { font-size: 2.2rem; margin-bottom: 15px; font-weight: 700; }
-.section-header p { color: #666; max-width: 600px; margin: 0 auto 60px auto; font-size: 1.1rem; }
+.section-header h2 { font-size: 2.2rem; margin-bottom: 15px; color: var(--primary); }
+.section-header p { color: #444; max-width: 600px; margin: 0 auto 60px auto; font-size: 1.1rem; }
 
 .features-grid { display: flex; justify-content: space-between; gap: 30px; }
 
@@ -167,20 +210,22 @@ body {
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; overflow: hidden;
 }
 .feature-card:hover { 
-    transform: translateY(-10px); box-shadow: 0 20px 40px rgba(75, 10, 117, 0.1); border-color: rgba(139, 46, 207, 0.3);
+    transform: translateY(-10px); 
+    box-shadow: 0 20px 40px rgba(88, 15, 122, 0.15);
+    border-color: rgba(88, 15, 122, 0.3);
 }
 .icon-box {
     background: var(--primary); color: white; width: 60px; height: 60px;
     display: flex; justify-content: center; align-items: center; border-radius: 12px;
     margin-bottom: 25px; font-size: 1.5rem; transition: transform 0.4s ease;
-    box-shadow: 0 5px 15px rgba(75, 10, 117, 0.2);
+    box-shadow: 0 5px 15px rgba(55, 7, 77, 0.2);
 }
-.feature-card:hover .icon-box { transform: scale(1.1) rotate(5deg); background: var(--accent); }
-.feature-card h3 { font-size: 1.25rem; margin-bottom: 10px; color: var(--text-dark); }
-.feature-card p { font-size: 0.95rem; color: #777; line-height: 1.7; }
+.feature-card:hover .icon-box { transform: scale(1.1) rotate(5deg); background: var(--secondary); }
+.feature-card h3 { font-size: 1.3rem; margin-bottom: 10px; color: var(--text-dark); }
+.feature-card p { font-size: 0.95rem; color: #555; line-height: 1.7; }
 
 /* ========================================= */
-/* --- 5. PROYECTOS (CON BOTÓN DE VIDRIO) --- */
+/* --- 5. PROYECTOS --- */
 /* ========================================= */
 
 .projects { 
@@ -188,91 +233,135 @@ body {
     background: transparent;
 }
 .projects-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
-.projects-grid { display: grid; grid-template-columns: 1.5fr 1fr; grid-template-rows: 280px 280px; gap: 25px; }
-.big-item { grid-row: span 2; }
+
+.projects-grid { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+    gap: 30px; 
+}
 
 .project-item {
     border-radius: 20px; background-size: cover; background-position: center; position: relative;
     overflow: hidden; display: flex; align-items: flex-end; cursor: pointer;
     box-shadow: 0 5px 15px rgba(0,0,0,0.08);
     transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.5s ease;
+    
+    aspect-ratio: 1 / 1; 
+    width: 100%;
 }
+
 .project-item:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
 
 .project-item::before {
     content: ''; position: absolute; inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
+    background: linear-gradient(to top, rgba(55, 7, 77, 0.95) 0%, rgba(55, 7, 77, 0.4) 50%, transparent 100%);
     opacity: 0.8; transition: opacity 0.5s ease;
 }
 .project-item:hover::before { opacity: 1; }
 
 .project-info {
-    position: relative; z-index: 2; padding: 30px; color: white; width: 100%;
+    position: relative; z-index: 2; padding: 40px; color: white; width: 100%;
     transform: translateY(0); transition: transform 0.5s ease;
 }
 .project-item:hover .project-info { transform: translateY(-3px); }
+.project-info p { margin-bottom: 25px; opacity: 0.95; font-weight: 400; font-size: 1.1rem; }
+.project-info h3 { font-size: 2rem; }
 
-/* --- AUMENTAMOS EL ESPACIO DEL TEXTO --- */
-.project-info p {
-    font-size: 0.95rem;
-    opacity: 0.9;
-    margin-bottom: 25px; /* Aumentado de 15px a 25px para dar aire al botón */
-}
-
-/* --- NUEVO ESTILO DEL BOTÓN "SABER MÁS" (EFECTO VIDRIO) --- */
+/* Botón de Vidrio */
 .project-info .btn-white {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.4s ease;
-    display: inline-block;
-    
-    /* Propiedades de Vidrio */
-    background: rgba(255, 255, 255, 0.2); /* Blanco semitransparente */
-    backdrop-filter: blur(10px);          /* Efecto de desenfoque */
-    border: 1px solid rgba(255, 255, 255, 0.3); /* Borde sutil */
-    color: white;                         /* Texto blanco */
-    font-weight: 500;                     /* Fuente más delicada */
-    padding: 8px 20px;                    /* Ajuste de padding */
+    opacity: 0; transform: translateY(20px); transition: all 0.4s ease; display: inline-block;
+    background: rgba(255, 255, 255, 0.15); 
+    backdrop-filter: blur(10px);          
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white; font-weight: 600; padding: 10px 24px;
+    border-radius: 20px; cursor: pointer; text-transform: none;
 }
+.project-item:hover .btn-white { opacity: 1; transform: translateY(0); background: rgba(255, 255, 255, 0.25); }
 
-/* --- HOVER DEL BOTÓN DE VIDRIO --- */
-.project-item:hover .btn-white {
-    opacity: 1;
-    transform: translateY(0);
-    /* Al pasar el mouse, se vuelve un poco más brillante */
-    background: rgba(255, 255, 255, 0.35); 
-}
-
+/* --- TAG (NUESTRA ESENCIA) MEJORADO --- */
 .tag {
-    background: var(--primary); padding: 5px 12px; border-radius: 6px;
-    font-size: 0.75rem; text-transform: uppercase; font-weight: 700; margin-bottom: 10px; display: inline-block;
+    background: var(--secondary); 
+    padding: 6px 14px; 
+    border-radius: 6px;
+    font-size: 0.85rem; 
+    text-transform: uppercase; 
+    
+    /* CAMBIOS DE VISIBILIDAD */
+    font-weight: 800; /* Letra bien gorda */
+    color: #ffffff;   /* Blanco puro */
+    letter-spacing: 1.5px; /* Espaciado para leer mejor */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Sombrita suave al texto */
+    
+    margin-bottom: 15px; 
+    display: inline-block;
 }
 
 /* ========================================= */
-/* --- 6. FOOTER --- */
+/* --- 6. NOSOTROS (CON ANIMACIÓN) --- */
 /* ========================================= */
 
-.footer { background: var(--secondary); color: white; padding: 80px 5% 20px 5%; }
+.about { padding: 100px 5%; background: transparent; position: relative; }
+.about-container { display: flex; align-items: center; justify-content: space-between; gap: 60px; max-width: 1200px; margin: 0 auto; }
+.about-text { flex: 1; }
+.about-text h2 { font-size: 2.5rem; margin-bottom: 25px; line-height: 1.2; color: var(--text-dark); }
+.about-text p { font-size: 1rem; color: #555; margin-bottom: 20px; font-family: var(--font-body); }
+
+.about-values {
+    flex: 1; background: white; padding: 40px; border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(55, 7, 77, 0.08); border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* --- ANIMACIÓN DELICADA DE LOS ITEMS --- */
+.value-item { 
+    margin-bottom: 30px; 
+    padding-bottom: 30px; 
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    
+    /* Transición suave para el movimiento y el borde */
+    transition: all 0.3s ease; 
+    border-left: 3px solid transparent; /* Borde invisible al principio */
+    padding-left: 0px;
+}
+
+/* Cuando paso el mouse por encima... */
+.value-item:hover {
+    transform: translateX(10px); /* Se mueve 10px a la derecha */
+    border-left: 3px solid var(--secondary); /* Aparece el borde violeta */
+    padding-left: 15px; /* Da espacio para el texto */
+}
+
+.value-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+
+.value-item h3 { font-size: 1.2rem; color: var(--primary); margin-bottom: 8px; font-family: var(--font-title); }
+.value-item p { font-size: 0.9rem; color: #666; margin: 0; }
+
+/* ========================================= */
+/* --- 7. FOOTER --- */
+/* ========================================= */
+
+.footer { background: var(--primary); color: white; padding: 80px 5% 20px 5%; }
 .footer-container { display: flex; justify-content: space-between; gap: 50px; }
 .footer-left { flex: 1; }
 .footer-left h2 { font-size: 2.5rem; margin-bottom: 20px; }
-.contact-data p { display: flex; align-items: center; gap: 10px; margin-top: 15px; color: #ccc; }
-.footer-right { flex: 1; background: rgba(255,255,255,0.05); padding: 30px; border-radius: 20px; }
+.contact-data p { display: flex; align-items: center; gap: 10px; margin-top: 15px; color: #ddd; }
+.footer-right { flex: 1; background: rgba(255,255,255,0.05); padding: 30px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); }
+
 .form-group { margin-bottom: 15px; }
 .form-group label { display: block; font-size: 0.8rem; margin-bottom: 5px; color: #ccc; }
 .form-group input, .form-group textarea {
     width: 100%; padding: 12px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
     border-radius: 8px; color: white; font-family: inherit;
 }
-.footer-bottom { margin-top: 50px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); text-align: right; font-size: 0.8rem; color: #888; }
+.footer-bottom { margin-top: 50px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); text-align: right; font-size: 0.85rem; color: #aaa; }
 
 /* ========================================= */
-/* --- 7. RESPONSIVE --- */
+/* --- 8. RESPONSIVE --- */
 /* ========================================= */
 
 @media (max-width: 1024px) {
     .hero-brand h1 { font-size: 3.5rem; }
 }
+
 @media (max-width: 768px) {
     .menu-toggle { display: block; } 
     .navbar {
@@ -285,22 +374,24 @@ body {
     .btn-contact { width: 100%; text-align: center; margin: 10px 0 0 0; }
 
     .hero-brand { min-height: 400px; }
-    .hero-brand-content h1 { font-size: 2.8rem; }
+    .hero-brand-content h1 { font-size: 3rem; }
     
     .features-grid { flex-direction: column; }
     
-    .projects-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
-    .big-item { grid-row: auto; height: 300px; }
-    .project-item { height: 250px; }
+    .projects-grid { grid-template-columns: 1fr; gap: 20px; }
+    .project-item { 
+        aspect-ratio: 4/3; 
+        width: 100%;
+    }
     
-    /* En celular, el botón de vidrio siempre visible */
     .project-item .btn-white { 
-        opacity: 1; 
-        transform: translateY(0);
-        /* Un poco más opaco en móvil para asegurar legibilidad */
+        opacity: 1; transform: translateY(0);
         background: rgba(255, 255, 255, 0.3); 
     }
     .project-item:hover { transform: none; }
+
+    .about-container { flex-direction: column; gap: 40px; }
+    .about-text h2 { font-size: 2rem; }
 
     .footer-container { flex-direction: column; gap: 40px; }
     .footer-left { text-align: center; }
@@ -308,6 +399,114 @@ body {
     .footer-bottom { text-align: center; }
 }
 @media (max-width: 480px) {
-    .hero-brand-content h1 { font-size: 2.2rem; }
+    .hero-brand-content h1 { font-size: 2.5rem; }
     .projects-header { flex-direction: column; align-items: flex-start; gap: 10px; }
+}
+
+/* ========================================= */
+/* --- NUEVOS ESTILOS: ETIQUETAS Y GRÁFICO --- */
+/* ========================================= */
+
+/* 1. CONTENEDOR DE ETIQUETAS */
+.project-tags {
+    display: flex;
+    gap: 8px; 
+    flex-wrap: wrap; 
+    margin-bottom: 15px;
+}
+
+/* 2. ESTILO BASE DE LAS ETIQUETAS */
+.tag {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 6px;
+    display: inline-block;
+    margin-bottom: 0; 
+}
+
+/* Etiqueta Principal (Status) */
+.tag-status {
+    background: var(--secondary);
+    color: white;
+}
+
+/* Etiquetas de Datos (Vidrio) */
+.tag-data {
+    background: rgba(255, 255, 255, 0.15); 
+    border: 1px solid rgba(255, 255, 255, 0.4); 
+    backdrop-filter: blur(4px);
+    color: #fff;
+    font-weight: 600;
+}
+
+/* 3. GRÁFICO DE INVERSIONES (SVG) */
+.investment-chart {
+    position: absolute;
+    right: 30px; 
+    bottom: 30px; 
+    text-align: right;
+    
+    /* Estado Inicial */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease 0.1s; 
+}
+
+/* Texto chiquito sobre el gráfico */
+.chart-label {
+    display: block;
+    font-size: 0.7rem;
+    /* COLOR NUEVO: Violeta Brillante (Neon Urban) */
+    color: #bd00ff; 
+    margin-bottom: 5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    /* Un pequeño brillo al texto */
+    text-shadow: 0 0 10px rgba(189, 0, 255, 0.5);
+}
+
+/* APARECER AL HOVER */
+.project-item:hover .investment-chart {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 4. ANIMACIÓN DE LA LÍNEA */
+.chart-line {
+    stroke-dasharray: 120; 
+    stroke-dashoffset: 120; 
+    transition: stroke-dashoffset 1.5s ease-out;
+    
+    /* COLOR NUEVO: Forzamos el violeta brillante desde CSS */
+    stroke: #bd00ff !important; 
+    filter: drop-shadow(0 0 5px rgba(189, 0, 255, 0.6)); /* Efecto neón */
+}
+
+.project-item:hover .chart-line {
+    stroke-dashoffset: 0;
+}
+
+/* PUNTO FINAL */
+.chart-dot {
+    opacity: 0;
+    transition: opacity 0.3s ease 1s;
+    
+    /* COLOR NUEVO */
+    fill: #bd00ff !important;
+}
+
+.project-item:hover .chart-dot {
+    opacity: 1;
+}
+
+/* ESPACIADO */
+.project-item:hover .project-info {
+    padding-right: 120px; 
+}
+.project-info .btn-white {
+    position: relative; 
+    z-index: 10;
 }
