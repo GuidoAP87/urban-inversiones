@@ -3,25 +3,18 @@
 /* ========================================= */
 
 :root {
-    /* PALETA OFICIAL */
     --primary: #37074d;   
     --secondary: #580f7a; 
-    --neon-purple: #bd00ff; /* Para gráficos brillantes */
-    --border-lilac: #dcd0ff; /* Para borde del logo */
-    
+    --neon-purple: #bd00ff;
+    --border-lilac: #dcd0ff;
     --text-dark: #000000;
     --text-light: #ffffff;
-    
-    /* TIPOGRAFÍAS */
     --font-title: 'Red Hat Display', sans-serif;
     --font-body: 'Open Sans', sans-serif;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-
 html { scroll-behavior: smooth; }
-
-/* Ajuste para que el menú fijo no tape los títulos al hacer scroll */
 #contacto { scroll-margin-top: 100px; }
 #beneficios, #proyectos, #nosotros { scroll-margin-top: 20px; }
 
@@ -31,7 +24,6 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     background-color: #ffffff;
-    /* Fondo de puntos sutil */
     background-image: radial-gradient(rgba(55, 7, 77, 0.08) 2px, transparent 2px);
     background-size: 25px 25px;
 }
@@ -78,7 +70,6 @@ h1, h2, h3, h4, .btn {
     border-bottom: 1px solid rgba(255,255,255,0.5);
 }
 
-/* Contenedor del Logo (Círculo con borde lila) */
 .logo-link {
     display: flex;
     justify-content: center;
@@ -86,18 +77,17 @@ h1, h2, h3, h4, .btn {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    overflow: hidden; /* Recorta lo que sobra */
-    border: 2px solid var(--border-lilac); /* Borde lila de 2px */
+    overflow: hidden;
+    border: 2px solid var(--border-lilac);
     background-color: white;
 }
 
-/* La Imagen del Logo (Con Zoom para tapar bordes blancos) */
 .logo-img { 
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-    transform: scale(1.15); /* Zoom del 15% */
+    transform: scale(1.15);
 }
 
 .navbar { display: flex; align-items: center; gap: 15px; }
@@ -168,7 +158,6 @@ h1, h2, h3, h4, .btn {
     font-size: 1.3rem; letter-spacing: 1px; opacity: 0.95; font-weight: 400;
 }
 
-/* BRAND BAR */
 .brand-bar-container { 
     background: transparent;
     padding: 20px 5%; display: flex; justify-content: flex-start; 
@@ -210,32 +199,22 @@ h1, h2, h3, h4, .btn {
 .feature-card p { font-size: 0.95rem; color: #555; line-height: 1.7; }
 
 /* ========================================= */
-/* --- 5. PROYECTOS (CUADRADOS & GRÁFICOS) --- */
+/* --- 5. PROYECTOS --- */
 /* ========================================= */
 .projects { padding: 100px 5%; background: transparent; }
 .projects-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
-
-.projects-grid { 
-    display: grid; 
-    grid-template-columns: 1fr 1fr; /* 2 columnas iguales en PC */
-    gap: 30px; 
-}
+.projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
 
 .project-item {
     border-radius: 20px; background-size: cover; background-position: center; position: relative;
     overflow: hidden; display: flex; align-items: flex-end; cursor: pointer;
     box-shadow: 0 5px 15px rgba(0,0,0,0.08);
     transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.5s ease;
-    
-    aspect-ratio: 1 / 1; /* Cuadrado perfecto en PC */
-    width: 100%;
+    aspect-ratio: 1 / 1; width: 100%;
 }
-
 .project-item:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
-
 .project-item::before {
     content: ''; position: absolute; inset: 0;
-    /* Degradado violeta al fondo */
     background: linear-gradient(to top, rgba(55, 7, 77, 0.95) 0%, rgba(55, 7, 77, 0.4) 50%, transparent 100%);
     opacity: 0.8; transition: opacity 0.5s ease;
 }
@@ -249,7 +228,6 @@ h1, h2, h3, h4, .btn {
 .project-info p { margin-bottom: 25px; opacity: 0.95; font-weight: 400; font-size: 1.1rem; }
 .project-info h3 { font-size: 2rem; }
 
-/* Etiquetas (Tags) */
 .project-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 15px; }
 .tag {
     font-size: 0.75rem; text-transform: uppercase; font-weight: 700;
@@ -258,7 +236,6 @@ h1, h2, h3, h4, .btn {
 .tag-status { background: var(--secondary); color: white; }
 .tag-data { background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.4); backdrop-filter: blur(4px); color: #fff; font-weight: 600; }
 
-/* Botón de Vidrio */
 .project-info .btn-white {
     opacity: 0; transform: translateY(20px); transition: all 0.4s ease; display: inline-block;
     background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px);          
@@ -267,7 +244,6 @@ h1, h2, h3, h4, .btn {
 }
 .project-item:hover .btn-white { opacity: 1; transform: translateY(0); background: rgba(255, 255, 255, 0.25); }
 
-/* --- GRÁFICO DE INVERSIONES NEON --- */
 .investment-chart {
     position: absolute; right: 30px; bottom: 30px; text-align: right;
     opacity: 0; transform: translateY(20px); transition: all 0.5s ease 0.1s; 
@@ -333,6 +309,46 @@ h1, h2, h3, h4, .btn {
 }
 .footer-bottom { margin-top: 50px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); text-align: right; font-size: 0.85rem; color: #aaa; }
 
+/* === ESTILOS NUEVOS PARA REDES SOCIALES === */
+.social-media-links {
+    margin-top: 30px; /* Espacio arriba */
+    display: flex;
+    gap: 15px; /* Espacio entre botones */
+}
+
+.social-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%; /* Redondos */
+    background: rgba(255,255,255,0.1); /* Fondo sutil igual a los inputs */
+    color: white; /* Color del icono */
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Efectos al pasar el mouse (Hover con colores de marca) */
+.social-btn:hover {
+    transform: translateY(-3px); /* Pequeña elevación */
+    color: white;
+}
+
+/* Color oficial Facebook */
+.social-btn.facebook:hover {
+    background: #1877F2; 
+    border-color: #1877F2;
+}
+
+/* Degradado oficial Instagram */
+.social-btn.instagram:hover {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    border-color: transparent;
+}
+
+
 /* ========================================= */
 /* --- 8. RESPONSIVE (OPTIMIZACIÓN MÓVIL) --- */
 /* ========================================= */
@@ -342,7 +358,6 @@ h1, h2, h3, h4, .btn {
 }
 
 @media (max-width: 768px) {
-    /* 1. Header y Menú Hamburguesa */
     .menu-toggle { display: block; } 
     .navbar {
         position: fixed; top: 0; right: -100%; height: 100vh; width: 75%; background: white;
@@ -353,43 +368,101 @@ h1, h2, h3, h4, .btn {
     .nav-link { font-size: 1.2rem; }
     .btn-contact { width: 100%; text-align: center; margin: 10px 0 0 0; }
 
-    /* 2. Textos más pequeños */
     .hero-brand { min-height: 400px; }
-    .hero-brand-content h1 { font-size: 2.8rem; /* Reducido para que entre en celular */ }
+    .hero-brand-content h1 { font-size: 2.8rem; }
     
-    /* 3. Beneficios Verticales */
     .features-grid { flex-direction: column; }
     
-    /* 4. Proyectos en Celular (Rectangulares y sin gráfico) */
     .projects-grid { grid-template-columns: 1fr; gap: 20px; }
-    
-    .project-item { 
-        aspect-ratio: 4/3; /* En celular usamos rectángulo, no cuadrado */
-        width: 100%;
-    }
-    
-    /* Ocultamos el gráfico en móvil porque no hay mouse para hacer 'hover' */
+    .project-item { aspect-ratio: 4/3; width: 100%; }
     .investment-chart { display: none; }
-    .project-item:hover .project-info { padding-right: 40px; /* Restaura el padding normal */ }
-
-    /* El botón aparece siempre en móvil (no solo al hover) */
-    .project-item .btn-white { 
-        opacity: 1; transform: translateY(0);
-        background: rgba(255, 255, 255, 0.3); 
-    }
+    .project-item:hover .project-info { padding-right: 40px; }
+    .project-item .btn-white { opacity: 1; transform: translateY(0); background: rgba(255, 255, 255, 0.3); }
     .project-item:hover { transform: none; }
 
-    /* 5. Nosotros y Footer en columna */
     .about-container { flex-direction: column; gap: 40px; }
     .about-text h2 { font-size: 2rem; }
 
     .footer-container { flex-direction: column; gap: 40px; }
     .footer-left { text-align: center; }
     .contact-data p { justify-content: center; }
+    
+    /* Centrar redes sociales en celular */
+    .social-media-links { justify-content: center; }
+
     .footer-bottom { text-align: center; }
 }
 
 @media (max-width: 480px) {
     .hero-brand-content h1 { font-size: 2.5rem; }
     .projects-header { flex-direction: column; align-items: flex-start; gap: 10px; }
+}
+
+/* Color oficial WhatsApp (Verde) */
+.social-btn.whatsapp:hover {
+    background: #25D366;
+    border-color: #25D366;
+}
+
+/* ========================================= */
+/* GALERÍA "DOCK" PROPORCIONAL (Natural)     */
+/* ========================================= */
+
+.mini-gallery {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;                 /* Un poco más de espacio entre ellas */
+    padding: 20px 0 40px 0;
+    width: 100%;
+    height: 180px;             /* Un poco más altas para que entren mejor los detalles */
+    
+    overflow-x: auto;          
+    scrollbar-width: none; 
+    
+    /* Fondo muy sutil para encuadrar la galería */
+    background: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.02) 20%, rgba(0,0,0,0.02) 80%, transparent 100%);
+}
+.mini-gallery::-webkit-scrollbar { display: none; }
+
+.mini-gallery img {
+    /* ESTADO NORMAL (Quietas) */
+    height: 100%;              /* Usan toda la altura disponible */
+    width: 60px;               /* Ancho "miniatura" (ya no son líneas finas) */
+    
+    object-fit: cover;         /* Recorta inteligentemente para llenar el espacio sin deformar */
+    object-position: center;   /* Centra la imagen */
+    
+    border-radius: 12px;       /* Bordes redondeados suaves (no redondos completos) */
+    
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Animación suave */
+    
+    opacity: 0.8;              /* Casi visibles del todo */
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    filter: grayscale(100%);   /* Blanco y negro elegante al estar quietas */
+    border: 2px solid transparent; /* Prepara el borde */
+}
+
+/* 1. FOTO ELEGIDA (Hover) */
+.mini-gallery img:hover {
+    width: 240px;              /* Ancho equilibrado (Formato foto estándar) */
+    opacity: 1;
+    filter: grayscale(0%);     /* Recupera el color */
+    border-radius: 8px;        /* Bordes un poco más rectos para ver bien la foto */
+    border-color: var(--neon-purple); /* Borde de color */
+    box-shadow: 0 15px 30px rgba(55, 7, 77, 0.2); /* Sombra flotante */
+    transform: translateY(-5px); 
+    
+    /* TRUCO CLAVE: Si es un plano vertical, esto ayuda a verlo mejor */
+    z-index: 10;
+}
+
+/* 2. VECINAS (Efecto Ola suave) */
+.mini-gallery img:hover + img,
+.mini-gallery img:has(+ img:hover) {
+    width: 100px;              /* Las vecinas crecen un poquito */
+    opacity: 0.9;
+    filter: grayscale(50%);
+    border-radius: 10px;
 }
