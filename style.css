@@ -35,7 +35,7 @@ h1, h2, h3, h4, .btn {
 
 .text-purple { color: var(--primary); }
 
-/* --- BOTONES --- */
+/* --- BOTONES GENERALES --- */
 .btn {
     padding: 12px 24px;
     border-radius: 8px;
@@ -52,8 +52,9 @@ h1, h2, h3, h4, .btn {
 .btn-full { width: 100%; background-color: var(--secondary); color: white; margin-top: 10px; }
 .btn-full:hover { background-color: var(--primary); }
 
+
 /* ========================================= */
-/* --- 2. HEADER Y LOGO REDONDO --- */
+/* --- 2. HEADER Y NAVEGACIÓN --- */
 /* ========================================= */
 
 .header {
@@ -120,6 +121,7 @@ h1, h2, h3, h4, .btn {
 
 .menu-toggle { display: none; background: none; border: none; font-size: 2rem; color: var(--text-dark); cursor: pointer; }
 
+
 /* ========================================= */
 /* --- 3. HERO (PORTADA) --- */
 /* ========================================= */
@@ -127,7 +129,7 @@ h1, h2, h3, h4, .btn {
     position: relative;
     width: 100%;
     min-height: 500px;
-    background-image: url('portada.jpg');
+    background-image: url('portada.jpg'); /* Asegúrate de tener esta imagen */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -170,6 +172,7 @@ h1, h2, h3, h4, .btn {
 }
 .brand-bar h2 { font-size: 1.5rem; font-weight: 700; margin: 0; }
 
+
 /* ========================================= */
 /* --- 4. BENEFICIOS --- */
 /* ========================================= */
@@ -198,19 +201,70 @@ h1, h2, h3, h4, .btn {
 .feature-card h3 { font-size: 1.3rem; margin-bottom: 10px; color: var(--text-dark); }
 .feature-card p { font-size: 0.95rem; color: #555; line-height: 1.7; }
 
+
 /* ========================================= */
-/* --- 5. PROYECTOS --- */
+/* --- 5. SECCIÓN PROYECTOS (ESTRUCTURA) --- */
 /* ========================================= */
 .projects { padding: 100px 5%; background: transparent; }
-.projects-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
-.projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
 
+/* TÍTULO PRINCIPAL "PROYECTOS" */
+.projects-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+}
+.projects-header h2 {
+    font-size: 4rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--primary);
+    text-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* GRILLA VERTICAL (Un proyecto debajo del otro) */
+.projects-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+/* BLOQUE INDIVIDUAL */
+.project-block {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* SUBTÍTULOS (Milano III / Milano IV) */
+.project-subtitle {
+    text-align: left;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-left: 10px;
+    border-left: 6px solid var(--neon-purple);
+    padding-left: 15px;
+    line-height: 1;
+}
+
+/* TARJETA DE PROYECTO (BASE) */
 .project-item {
-    border-radius: 20px; background-size: cover; background-position: center; position: relative;
-    overflow: hidden; display: flex; align-items: flex-end; cursor: pointer;
+    border-radius: 20px; 
+    background-size: cover; 
+    background-position: center; 
+    position: relative;
+    overflow: hidden; 
+    display: flex; 
+    align-items: flex-end; 
+    cursor: pointer;
     box-shadow: 0 5px 15px rgba(0,0,0,0.08);
     transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.5s ease;
-    aspect-ratio: 1 / 1; width: 100%;
+    width: 100%;
+    aspect-ratio: 21/9; /* Formato panorámico para desktop */
 }
 .project-item:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
 .project-item::before {
@@ -220,14 +274,15 @@ h1, h2, h3, h4, .btn {
 }
 .project-item:hover::before { opacity: 1; }
 
+/* INFORMACIÓN DENTRO DE LA TARJETA */
 .project-info {
     position: relative; z-index: 2; padding: 40px; color: white; width: 100%;
-    transform: translateY(0); transition: transform 0.5s ease;
+    transform: translateY(0); transition: all 0.5s ease;
 }
-.project-item:hover .project-info { transform: translateY(-3px); }
 .project-info p { margin-bottom: 25px; opacity: 0.95; font-weight: 400; font-size: 1.1rem; }
 .project-info h3 { font-size: 2rem; }
 
+/* TAGS Y ETIQUETAS */
 .project-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 15px; }
 .tag {
     font-size: 0.75rem; text-transform: uppercase; font-weight: 700;
@@ -236,6 +291,7 @@ h1, h2, h3, h4, .btn {
 .tag-status { background: var(--secondary); color: white; }
 .tag-data { background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.4); backdrop-filter: blur(4px); color: #fff; font-weight: 600; }
 
+/* BOTÓN BLANCO "SABER MÁS" (Para Milano IV) */
 .project-info .btn-white {
     opacity: 0; transform: translateY(20px); transition: all 0.4s ease; display: inline-block;
     background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(10px);          
@@ -244,6 +300,7 @@ h1, h2, h3, h4, .btn {
 }
 .project-item:hover .btn-white { opacity: 1; transform: translateY(0); background: rgba(255, 255, 255, 0.25); }
 
+/* GRÁFICO DE VALOR */
 .investment-chart {
     position: absolute; right: 30px; bottom: 30px; text-align: right;
     opacity: 0; transform: translateY(20px); transition: all 0.5s ease 0.1s; 
@@ -261,10 +318,158 @@ h1, h2, h3, h4, .btn {
 .project-item:hover .chart-line { stroke-dashoffset: 0; }
 .chart-dot { opacity: 0; transition: opacity 0.3s ease 1s; fill: var(--neon-purple) !important; }
 .project-item:hover .chart-dot { opacity: 1; }
-.project-item:hover .project-info { padding-right: 120px; }
+
+
+/* ========================================================= */
+/* --- 6. PROYECTOS INTERACTIVOS (POSICIÓN CORREGIDA) --- */
+/* ========================================================= */
+
+.project-item-interactive {
+    position: relative;
+    overflow: hidden;
+}
+
+/* --- A. CONTENEDOR DE INFORMACIÓN --- */
+.project-info {
+    position: relative; 
+    z-index: 30; /* Encima del vidrio */
+    padding: 40px; 
+    color: white; 
+    width: 100%;
+    pointer-events: none; /* Permite clicks en los botones de abajo */
+    
+    /* Estado Normal */
+    transform: translateY(0); 
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* AL PASAR EL MOUSE: Subimos el contenedor MUCHO MÁS (-120px) */
+/* Esto hace que todo el bloque de texto se vaya a la parte superior */
+.project-item-interactive:hover .project-info {
+    transform: translateY(-120px); 
+}
+
+/* --- B. ELEMENTOS QUE DESAPARECEN --- */
+/* El título se va */
+.project-item-interactive:hover .project-info h3 {
+    opacity: 0;
+    transform: scale(0.9) translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+/* El gráfico se va */
+.project-item-interactive:hover .investment-chart {
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+/* --- C. ELEMENTOS QUE SE MUEVEN (Tags y Dirección) --- */
+
+/* 1. LOS MENSAJES (Tags): Suben un poquito más para despegarse */
+.project-item-interactive:hover .project-tags {
+    opacity: 1;
+    transform: translateY(-10px); /* Ajuste fino hacia arriba */
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.5));
+    transition: all 0.5s ease;
+}
+
+/* 2. LA DIRECCIÓN: Sube fuerte para ocupar el lugar vacío */
+.project-item-interactive:hover .project-info p {
+    opacity: 1;
+    /* Sube 55px para cerrar el hueco que dejó el Título invisible */
+    transform: translateY(-55px); 
+    text-shadow: 0 4px 10px rgba(0,0,0,0.8);
+    transition: all 0.5s ease 0.1s; /* Pequeño retraso para efecto fluido */
+}
+
+
+/* --- D. EL PANEL DE VIDRIO (OVERLAY) --- */
+.project-actions-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 45%; 
+    display: flex;
+    
+    transform: translateY(101%); 
+    transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    
+    z-index: 20;
+    pointer-events: auto; /* Reactivar clicks para botones */
+    
+    /* EFECTO VIDRIO */
+    background: rgba(30, 5, 40, 0.6); 
+    backdrop-filter: blur(12px) saturate(180%); 
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 -15px 40px rgba(0,0,0,0.4);
+}
+
+/* AL PASAR EL MOUSE: Aparece el vidrio */
+.project-item-interactive:hover .project-actions-overlay {
+    transform: translateY(0);
+}
+
+
+/* --- E. BOTONES --- */
+.action-btn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.9);
+    font-family: var(--font-title);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.photos-btn::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 30%;
+    height: 40%;
+    width: 1px;
+    background: rgba(255,255,255,0.15);
+}
+
+.action-btn .material-icons-outlined {
+    font-size: 2rem;
+    color: var(--neon-purple);
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 0 5px rgba(189, 0, 255, 0.4));
+}
+
+.action-btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+}
+.action-btn:hover .material-icons-outlined {
+    transform: scale(1.15);
+    color: #fff;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+}
+
+/* Ajuste Celular: Subimos un poco menos para que no se salga de pantalla */
+@media (max-width: 768px) {
+    .project-item-interactive:hover .project-info { transform: translateY(-90px); }
+}
+
 
 /* ========================================= */
-/* --- 6. NOSOTROS --- */
+/* --- 7. SECCIÓN NOSOTROS --- */
 /* ========================================= */
 .about { padding: 100px 5%; background: transparent; position: relative; }
 .about-container { display: flex; align-items: center; justify-content: space-between; gap: 60px; max-width: 1200px; margin: 0 auto; }
@@ -291,8 +496,9 @@ h1, h2, h3, h4, .btn {
 .value-item h3 { font-size: 1.2rem; color: var(--primary); margin-bottom: 8px; }
 .value-item p { font-size: 0.9rem; color: #666; margin: 0; }
 
+
 /* ========================================= */
-/* --- 7. FOOTER --- */
+/* --- 8. FOOTER Y REDES SOCIALES --- */
 /* ========================================= */
 .footer { background: var(--primary); color: white; padding: 80px 5% 20px 5%; }
 .footer-container { display: flex; justify-content: space-between; gap: 50px; }
@@ -309,11 +515,11 @@ h1, h2, h3, h4, .btn {
 }
 .footer-bottom { margin-top: 50px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); text-align: right; font-size: 0.85rem; color: #aaa; }
 
-/* === ESTILOS NUEVOS PARA REDES SOCIALES === */
+/* REDES SOCIALES */
 .social-media-links {
-    margin-top: 30px; /* Espacio arriba */
+    margin-top: 30px;
     display: flex;
-    gap: 15px; /* Espacio entre botones */
+    gap: 15px;
 }
 
 .social-btn {
@@ -322,17 +528,16 @@ h1, h2, h3, h4, .btn {
     align-items: center;
     width: 45px;
     height: 45px;
-    border-radius: 50%; /* Redondos */
-    background: rgba(255,255,255,0.1); /* Fondo sutil igual a los inputs */
-    color: white; /* Color del icono */
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    color: white;
     text-decoration: none;
     transition: all 0.3s ease;
     border: 1px solid rgba(255,255,255,0.2);
 }
 
-/* Efectos al pasar el mouse (Hover con colores de marca) */
 .social-btn:hover {
-    transform: translateY(-3px); /* Pequeña elevación */
+    transform: translateY(-3px);
     color: white;
 }
 
@@ -348,9 +553,110 @@ h1, h2, h3, h4, .btn {
     border-color: transparent;
 }
 
+/* Color oficial WhatsApp */
+.social-btn.whatsapp:hover {
+    background: #25D366;
+    border-color: #25D366;
+}
+
 
 /* ========================================= */
-/* --- 8. RESPONSIVE (OPTIMIZACIÓN MÓVIL) --- */
+/* --- 9. VISOR DE IMÁGENES (LIGHTBOX) --- */
+/* ========================================= */
+
+/* El fondo negro que cubre todo */
+.lightbox {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 9999; /* Por encima de TODO */
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95); /* Negro casi opaco */
+    backdrop-filter: blur(5px);
+}
+
+/* La Imagen Grande */
+.lightbox-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 1000px;
+    max-height: 80vh; 
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 0 50px rgba(255,255,255,0.1);
+    animation-name: zoom;
+    animation-duration: 0.3s;
+}
+
+/* Animación de entrada */
+@keyframes zoom {
+    from {transform:scale(0.8); opacity: 0} 
+    to {transform:scale(1); opacity: 1}
+}
+
+/* Botón Cerrar (X) */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: #f1f1f1;
+    font-size: 50px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    line-height: 1;
+    z-index: 10001;
+}
+.close-btn:hover { color: var(--neon-purple); }
+
+/* Flechas de Navegación */
+.prev-btn, .next-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    transition: 0.3s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    z-index: 10000;
+}
+
+.next-btn { right: 10px; border-radius: 3px 0 0 3px; }
+.prev-btn { left: 10px; border-radius: 3px 0 0 3px; }
+
+.prev-btn:hover, .next-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--neon-purple);
+    transform: scale(1.1);
+}
+
+/* Texto descriptivo */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+    font-size: 1.2rem;
+    font-family: var(--font-body);
+    margin-top: 10px;
+}
+
+
+/* ========================================= */
+/* --- 10. RESPONSIVE (CELULARES/TABLETS) --- */
 /* ========================================= */
 
 @media (max-width: 1024px) {
@@ -358,6 +664,7 @@ h1, h2, h3, h4, .btn {
 }
 
 @media (max-width: 768px) {
+    /* Menú Hamburguesa */
     .menu-toggle { display: block; } 
     .navbar {
         position: fixed; top: 0; right: -100%; height: 100vh; width: 75%; background: white;
@@ -368,29 +675,40 @@ h1, h2, h3, h4, .btn {
     .nav-link { font-size: 1.2rem; }
     .btn-contact { width: 100%; text-align: center; margin: 10px 0 0 0; }
 
+    /* Hero */
     .hero-brand { min-height: 400px; }
     .hero-brand-content h1 { font-size: 2.8rem; }
     
+    /* Beneficios */
     .features-grid { flex-direction: column; }
     
-    .projects-grid { grid-template-columns: 1fr; gap: 20px; }
-    .project-item { aspect-ratio: 4/3; width: 100%; }
+    /* Proyectos (Ajustes Verticales) */
+    .projects-header h2 { font-size: 2.5rem; }
+    .projects-grid { gap: 60px; }
+    .project-subtitle { font-size: 2rem; }
+    .project-item { aspect-ratio: 4/5; width: 100%; } /* Más alto en móvil */
     .investment-chart { display: none; }
+    
+    /* Mostrar info en móvil siempre (El hover no funciona bien en touch) */
     .project-item:hover .project-info { padding-right: 40px; }
     .project-item .btn-white { opacity: 1; transform: translateY(0); background: rgba(255, 255, 255, 0.3); }
     .project-item:hover { transform: none; }
 
+    /* Nosotros */
     .about-container { flex-direction: column; gap: 40px; }
     .about-text h2 { font-size: 2rem; }
 
+    /* Footer */
     .footer-container { flex-direction: column; gap: 40px; }
     .footer-left { text-align: center; }
     .contact-data p { justify-content: center; }
-    
-    /* Centrar redes sociales en celular */
     .social-media-links { justify-content: center; }
-
     .footer-bottom { text-align: center; }
+
+    /* Lightbox Móvil */
+    .lightbox-content { width: 95%; }
+    .close-btn { top: 10px; right: 20px; font-size: 40px; }
+    .prev-btn, .next-btn { font-size: 20px; padding: 10px; }
 }
 
 @media (max-width: 480px) {
@@ -398,71 +716,8 @@ h1, h2, h3, h4, .btn {
     .projects-header { flex-direction: column; align-items: flex-start; gap: 10px; }
 }
 
-/* Color oficial WhatsApp (Verde) */
-.social-btn.whatsapp:hover {
-    background: #25D366;
-    border-color: #25D366;
-}
-
-/* ========================================= */
-/* GALERÍA "DOCK" PROPORCIONAL (Natural)     */
-/* ========================================= */
-
-.mini-gallery {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;                 /* Un poco más de espacio entre ellas */
-    padding: 20px 0 40px 0;
-    width: 100%;
-    height: 180px;             /* Un poco más altas para que entren mejor los detalles */
-    
-    overflow-x: auto;          
-    scrollbar-width: none; 
-    
-    /* Fondo muy sutil para encuadrar la galería */
-    background: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.02) 20%, rgba(0,0,0,0.02) 80%, transparent 100%);
-}
-.mini-gallery::-webkit-scrollbar { display: none; }
-
-.mini-gallery img {
-    /* ESTADO NORMAL (Quietas) */
-    height: 100%;              /* Usan toda la altura disponible */
-    width: 60px;               /* Ancho "miniatura" (ya no son líneas finas) */
-    
-    object-fit: cover;         /* Recorta inteligentemente para llenar el espacio sin deformar */
-    object-position: center;   /* Centra la imagen */
-    
-    border-radius: 12px;       /* Bordes redondeados suaves (no redondos completos) */
-    
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Animación suave */
-    
-    opacity: 0.8;              /* Casi visibles del todo */
-    cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    filter: grayscale(100%);   /* Blanco y negro elegante al estar quietas */
-    border: 2px solid transparent; /* Prepara el borde */
-}
-
-/* 1. FOTO ELEGIDA (Hover) */
-.mini-gallery img:hover {
-    width: 240px;              /* Ancho equilibrado (Formato foto estándar) */
-    opacity: 1;
-    filter: grayscale(0%);     /* Recupera el color */
-    border-radius: 8px;        /* Bordes un poco más rectos para ver bien la foto */
-    border-color: var(--neon-purple); /* Borde de color */
-    box-shadow: 0 15px 30px rgba(55, 7, 77, 0.2); /* Sombra flotante */
-    transform: translateY(-5px); 
-    
-    /* TRUCO CLAVE: Si es un plano vertical, esto ayuda a verlo mejor */
-    z-index: 10;
-}
-
-/* 2. VECINAS (Efecto Ola suave) */
-.mini-gallery img:hover + img,
-.mini-gallery img:has(+ img:hover) {
-    width: 100px;              /* Las vecinas crecen un poquito */
-    opacity: 0.9;
-    filter: grayscale(50%);
-    border-radius: 10px;
+@media (max-width: 768px) {
+    .project-item-interactive:hover .project-info {
+        transform: translateY(-120px); /* Sube menos en celular */
+    }
 }
