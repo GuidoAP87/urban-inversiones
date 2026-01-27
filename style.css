@@ -721,3 +721,17 @@ h1, h2, h3, h4, .btn {
         transform: translateY(-120px); /* Sube menos en celular */
     }
 }
+
+/* --- CORRECCIÓN BOTONES SOCIALES --- */
+/* Esto elimina cualquier borde blanco o sombra extra en los iconos */
+.social-btn {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* Ajuste específico para que Instagram mantenga su forma perfecta sin líneas raras */
+.social-btn.instagram {
+    border: 0 !important;
+    background-clip: border-box; /* Asegura que el color llegue al borde */
+}
