@@ -83,7 +83,7 @@
                     
                     <h3 class="project-subtitle">Milano III</h3>
 
-                    <div class="project-item project-item-interactive" style="background-image: url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=1000&auto=format&fit=crop');">
+                    <div class="project-item project-item-interactive" style="background-image: url('fondo-milano3.jpeg');">
                         
                         <div class="project-info">
                             <div class="project-tags">
@@ -135,21 +135,31 @@
                         <img src="2planta2.jpg" alt="Plano 2 M4">
                     </div>
 
-                </div> <div class="project-block">
+                <div class="project-block">
                     
                     <h3 class="project-subtitle">Milano IV</h3>
 
-                    <div class="project-item" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000&auto=format&fit=crop');">
+                    <div class="project-item project-item-interactive" style="background-image: url('fondo-milano4.jpg');">
+                        
                         <div class="project-info">
                             <div class="project-tags">
                                 <span class="tag tag-status">Lanzamiento</span>
-                            </div>
+                                </div>
                             <h3>Milano IV</h3>
-                            <p>San Luis Capital, Centro</p>
-                            <a href="https://milano4.online/" target="_blank" class="btn btn-white">Saber más</a>
+                            <p>Belgrano 338, San Luis</p>
                         </div>
+
+                        <div class="project-actions-overlay">
+                            
+                            <a href="https://milano4.online/" target="_blank" class="action-btn">
+                                <span class="material-icons-outlined">360</span>
+                                Ver tour
+                            </a>
+
+                        </div>
+
                     </div>
-                </div> </div>
+                </div> 
         </section>
 
         <section class="about" id="nosotros">
@@ -193,7 +203,7 @@
                 </div>
 
                 <div class="social-media-links">
-                    <a href="#" target="_blank" class="social-btn facebook" aria-label="Facebook">
+                    <a href="https://www.facebook.com/profile.php?id=100083482895183" target="_blank" class="social-btn facebook" aria-label="Facebook">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                     </a>
                     <a href="https://www.instagram.com/urban.san.luis/" target="_blank" class="social-btn instagram" aria-label="Instagram">
@@ -208,22 +218,31 @@
             
             <div class="footer-right">
                 <form action="https://formsubmit.co/urban.vc.sanluis@gmail.com" method="POST" class="contact-form">
+
+                    <input type="hidden" name="_next" value="https://www.urbansanluis.com/">
+                    <input type="hidden" name="_subject" value="¡Nueva consulta de la Web!">
                     <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_subject" value="Nueva consulta Web URBAN">
-                    
+                    <input type="hidden" name="_template" value="table">
+
                     <div class="form-group">
-                        <label>Nombre</label>
-                        <input type="text" name="nombre" placeholder="Ej: Juan Pérez" required>
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
                     </div>
+
                     <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" name="email" placeholder="juan@email.com" required>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="juan@email.com" required>
                     </div>
+
                     <div class="form-group">
-                        <label>Mensaje</label>
-                        <textarea name="mensaje" rows="4" placeholder="¿En qué tipo de inversión estás interesado?" required></textarea>
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" placeholder="¿En qué tipo de inversión estás interesado?" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-full">Enviar Consulta</button>
+
+                    <button type="submit" class="submit-btn" style="width: 100%; padding: 15px; background-color: #6a0dad; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; margin-top: 10px;">
+                        Enviar Consulta
+                    </button>
+
                 </form>
             </div>
         </div>
